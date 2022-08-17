@@ -52,5 +52,5 @@ foreach ($service in $objSvcAcctInfo) {
     }
 }
 
-$report
+$report | Export-CSV -Path "C:\temp\Report.csv" -NoTypeInformation;
 
