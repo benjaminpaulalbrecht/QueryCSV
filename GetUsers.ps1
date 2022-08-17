@@ -40,7 +40,10 @@ foreach ($appPool in $objAppPoolInfo) {
 }
 
 foreach ($service in $objSvcAcctInfo) { 
-    $report += [PSCustomObject]@{
+        $report += [PSCustomObject]@{
+        AppPoolName = ""
+        AppPoolUserID = ""
+        AppPoolUserPassword = ""
         ServiceName = $service.Name 
         ServiceAccount =  $service.ServiceAccount
         Type = $service.Type
