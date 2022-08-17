@@ -23,7 +23,7 @@ $ServiceAccountInfomation = @(
 $objSvcAcctInfo = $ServiceAccountInfomation | ForEach-Object { 
     [PSCustomObject]@{
         ServiceName = $_.Name
-        SeviceAccount = $_.StartName
+        ServiceAccount = $_.StartName
         Type = 'Service'
     }
 }
@@ -44,7 +44,7 @@ foreach ($service in $objSvcAcctInfo) {
         AppPoolName = ""
         AppPoolUserID = ""
         AppPoolUserPassword = ""
-        ServiceName = $service.Name 
+        ServiceName = $service.ServiceName 
         ServiceAccount =  $service.ServiceAccount
         Type = $service.Type
 
