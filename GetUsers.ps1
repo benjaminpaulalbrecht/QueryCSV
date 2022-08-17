@@ -31,21 +31,16 @@ $objSvcAcctInfo = $ServiceAccountInfomation | ForEach-Object {
 $report = @() 
 
 foreach ($appPool in $objAppPoolInfo) { 
-    $report += [pscustomobject]@{
+    $report += [PSCustomObject]@{
     AppPoolName = $appPool.AppPoolName 
     AppPoolUserID = $appPool.AppPoolName
     AppPoolUserPassword = $appPool.Password
-    ServiceName = '' 
-    ServiceAccount = '' 
     Type = $appPool.Type
     }
 }
 
 foreach ($service in $objSvcAcctInfo) { 
     $report += [PSCustomObject]@{
-        AppPoolName = '' 
-        AppPoolUserID = '' 
-        AppPoolUserPassword = ''
         ServiceName = $service.Name 
         ServiceAccount =  $service.ServiceAccount
         Type = $service.Type
